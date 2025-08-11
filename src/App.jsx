@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Icon } from "@iconify/react";
 import Player from './Components/Player';
+import TextType from './TextAnimations/TextType';
 
 function App() {
   const [selectedCard, setSelectedCard] = useState(null);
@@ -37,26 +38,38 @@ function App() {
       </div>
     ),
     fanevents: (
-      <div className="">
-        <div className='flex flex-row sm:flex-row md:flex-row lg:flex-row gap-2'>
-          <div className="flex flex-col gap-2">
-            <div className="flex flex-row">
-              <img src="/images/fan1.png" alt="Fan Event 1" className="w-24 h-36" />
-              <img src="/images/fan2.png" alt="Fan Event 2" className="w-24 h-36" />
-            </div>
-            <img src="/images/fan11.png" alt="Fan Event 2" className="w-60 h-50" />
+    <div className="w-full">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 ">
+
+        <div className="flex flex-col gap-2 items-center">
+          <div className="flex gap-2">
+            <img src="/images/fan1.png" alt="Fan Event 1" className="w-full max-w-[5rem] h-auto" />
+            <img src="/images/fan2.png" alt="Fan Event 2" className="w-full max-w-[5rem] h-auto" />
+          </div>
+          <img src="/images/fan11.png" alt="Fan Event 11" className="w-full max-w-[9rem] h-auto" />
+          <div className="flex gap-2">
+            <img src="/images/fan5.png" alt="Fan Event 5" className="w-full max-w-[7rem] h-auto" />
+            <img src="/images/fan6.png" alt="Fan Event 6" className="w-full max-w-[7rem] h-auto" />
+          </div>
+          <img src="/images/fan16.png" alt="Fan Event 16" className="w-full max-w-[11rem] h-auto" />
+          <img src="/images/fan8.gif" alt="Fan Event 16" className="w-full h-full" />
         </div>
-        <div className="flex flex-col sm:flex-col md:flex-col lg:flex-col">
-          <img src="/images/fan3.png" alt="Fan Event 3" className="w-96 h-36" />
-          <img src="/images/fan4.png" alt="Fan Event 4" className="w-96 h-36" />
-          <div className='space-y-2'>
-            <img src="/images/fan13.png" alt="Fan Event 5" className="w-full h-36" />
-          <img src="/images/fan14.png" alt="Fan Event 6" className="w-full h-36" />
-          <img src="/images/fan15.png" alt="Fan Event 7" className="w-full h-36" />
+
+        <div className="flex flex-col gap-2 items-center">
+          <img src="/images/fan3.png" alt="Fan Event 3" className="w-full max-w-[14rem] h-auto" />
+          <img src="/images/fan4.png" alt="Fan Event 4" className="w-full max-w-[14rem] h-auto" />
+          <div className="space-y-2 flex flex-col items-center">
+            <img src="/images/fan13.png" alt="Fan Event 13" className="w-full max-w-[12rem] h-auto" />
+            <img src="/images/fan14.png" alt="Fan Event 14" className="w-full max-w-[12rem] h-auto" />
+            <img src="/images/fan15.png" alt="Fan Event 15" className="w-full max-w-[12rem] h-auto" />
+            <div className="flex flex-col sm:flex-row items-center gap-2">
+              <img src="/images/fan12.png" alt="Fan Event 12" className="w-full sm:w-1/2 max-w-[9rem] h-auto" />
+              <img src="/images/fan17.png" alt="Fan Event 17" className="w-full sm:w-1/2 max-w-[9rem] h-auto" />
+            </div>
           </div>
         </div>
-        </div>
       </div>
+    </div>
     ),
     layout: (
       <div className="space-y-2">
@@ -71,14 +84,14 @@ function App() {
       </div>
     ),
     photog: (
-      <div className="space-y-2 items-center">
+      <div className="space-y-5 items-center">
         <div className='grid grid-cols-4 gap-4 w-full h-full'>
           <img src="/images/photog (1).jpg" alt="Photo Manipulation 1" className="w-36 h-full sm:w-36 md:w-56 rounded-sm object-cover" />
           <img src="/images/photog (1).png" alt="Photo Manipulation 2" className="w-36 h-full sm:w-36 md:w-56 rounded-sm object-cover" />
           <img src="/images/photog (2).jpg" alt="Photo Manipulation 3" className="w-36 h-full sm:w-36 md:w-56 rounded-sm object-cover" />
           <img src="/images/photog (4).jpg" alt="Photo Manipulation 4" className="w-36 h-full sm:w-36 md:w-56 rounded-sm object-cover" />
         </div>
-        <a  href='https://labajoangelinal.wixsite.com/photography' className='dark:text-white underline'>Visit my photography site</a>
+        <a  href='https://labajoangelinal.wixsite.com/photography' className='flex items-center justify-center dark:text-white underline text-xs '>Visit my photography site</a>
       </div>
     )
   };
@@ -95,9 +108,14 @@ function App() {
         </div>
 
         <div className="flex-1 space-y-3">
-          <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 dark:text-white">
-            Hi, I'm Inah Labajo
-          </h1>
+          <TextType
+            text={["Hi, I'm Inah Labajo"]}
+            typingSpeed={75}
+            pauseDuration={1500}
+            showCursor={true}
+            cursorCharacter="|"
+            className="text-2xl md:text-3xl lg:text-4xl font-bold"
+          />
           <p className=" text-[11px] dark:text-white">
             I'm a Graphic Designer from the Philippines, blending music-inspired
             creativity with a versatile design style. Beyond graphics, I capture
@@ -186,6 +204,12 @@ function App() {
             showcases my adaptability and well-rounded skillset. While I haven't yet developed
             a signature style, I'm a fast learner who thrives on embracing new techniques and approaches.
           </p>
+          <a  href='https://drive.google.com/drive/folders/1nT-qxl9I_b-2sA9Ca-3isckyX897ZJFZ'
+          target="_blank"
+            rel="noopener noreferrer"
+            className='flex items-center justify-center dark:text-white underline text-xs'>
+              Full design archive
+        </a>
         </div>
         <div className="flex border-b border-gray-300 dark:border-gray-600 text-xs md:text-xs my-4">
           {projects.map((project) => (
@@ -211,14 +235,14 @@ function App() {
 
     contact: (
       <div className="w-full items-center dark:text-white mx-auto px-4 sm:px-6 md:px-12 lg:px-10 flex flex-col sm:flex-col md:flex-row lg:flex-row mb-6 gap-6">
-        <div className="w-full space-y-4 dark:text-white">
-          <h2 className="text-6xl font-bold text-left dark:text-white text-gray-900">
+        <div className="w-full dark:text-white">
+          <h2 className="text-6xl font-bold text-left dark:text-white text-gray-900 mb-4">
             Let's<br/>work<br/>together<br/>
           </h2>
 
           <a
             href="mailto:labajo.angelinal@gmail.com"
-            className="text-black dark:text-white  cursor-pointer duration-200 underline font-semibold"
+            className="text-black dark:text-white cursor-pointer duration-200 underline font-semibold"
             target="_blank"
             rel="noopener noreferrer"
           >
@@ -227,17 +251,17 @@ function App() {
         </div>
 
         <div className="w-full space-y-6 ">
-          <div className='border-b-1 flex items-center '>
+          <div className='border-b-1 flex items-center border-b-2 border-stone-900 dark:border-white'>
             <a
               href="https://x.com/chilwolsail"
-              className="text-black dark:text-white  underline font-semibold mb-4"
+              className="text-black dark:text-white underline font-semibold mb-4"
               target="_blank"
               rel="noopener noreferrer"
             >
               X
             </a>
           </div>
-          <div className='border-b-1 flex items-center'>
+          <div className='border-b-1 flex items-center border-b-2 border-stone-900 dark:border-white'>
             <a
               href="https://www.tiktok.com/@chilwolsail"
               className="text-black dark:text-white underline font-semibold mb-4"
@@ -247,7 +271,7 @@ function App() {
               Tiktok
             </a>
           </div>
-          <div className='border-b-1 flex items-center'>
+          <div className='border-b-2 flex items-center border-stone-900 dark:border-white'>
             <a
               href="https://www.facebook.com/chilwolsail"
               className="text-black dark:text-white underline font-semibold mb-4"
@@ -257,7 +281,7 @@ function App() {
               Facebook
             </a>
           </div>
-          <div className='border-b-1 flex items-center'>
+          <div className='border-b-2 flex items-center border-stone-900 dark:border-white'>
             <a
               href="https://www.linkedin.com/in/inahlabajo/"
               className="text-black dark:text-white underline font-semibold mb-4"
@@ -287,103 +311,90 @@ function App() {
       <div className='md:hidden min-h-screen flex items-center justify-center'>
         <div className='grid grid-cols-2 auto-rows-min gap-3 px-4 py-8 max-w-lg mx-auto w-full'>
 
-          <button 
-            className='col-span-2 rounded-2xl p-4 min-h-[140px] flex items-center justify-center hover:-translate-y-0.5 transition-all duration-300 relative overflow-hidden bg-cover bg-center bg-no-repeat' 
-            onClick={() => openModal('about')} 
-            style={{ backgroundImage: 'url(/images/INAH.jpg)' }}
+          <button
+            className='col-span-2 rounded-2xl p-4 min-h-[140px] flex items-center justify-center hover:-translate-y-0.5 transition-all duration-300 relative overflow-hidden bg-cover bg-center bg-no-repeat '
+            onClick={() => openModal('about')}
+            style={{ backgroundImage: 'url(/images/INAH2.jpg)' }}
           >
           </button>
 
-          <div className='bg-sky-950 rounded-2xl p-4  min-h-[120px] flex flex-col items-center justify-center text-center'>
-            
-          </div>
+          <div className='bg-sky-950 rounded-2xl p-4  min-h-[120px] flex flex-col items-center justify-center text-center'></div>
 
-          <button 
-            className='rounded-2xl p-4 min-h-[120px] flex flex-col items-center justify-center text-center hover:-translate-y-0.5 transition-all duration-300 relative overflow-hidden' 
+          <button
+            className='rounded-2xl p-4 min-h-[120px] flex flex-col items-center justify-center text-center hover:-translate-y-0.5 transition-all duration-300 relative overflow-hidden'
             onClick={() => openModal('contact')}
           >
-            <video 
+            <video
               className="absolute inset-0 w-full h-full object-cover rounded-2xl"
-              autoPlay 
-              loop 
-              muted 
+              autoPlay
+              loop
+              muted
               playsInline
             >
-              <source src="/images/0000-0120.mp4" type="video/mp4" />
+              <source src="/images/Sequence 01.mp4" type="video/mp4" />
               Your browser does not support the video tag.
             </video>
           </button>
 
-          <div className='col-span-2 bg-red-400 rounded-2xl p-4  min-h-[120px] flex items-center justify-between hover:-translate-y-0.5 transition-all duration-300'>
-            
-          </div>
+          <div className='col-span-2 bg-red-400 rounded-2xl p-4  min-h-[120px] flex items-center justify-between hover:-translate-y-0.5 transition-all duration-300'></div>
 
-          <button className='bg-red-300 rounded-2xl p-4  min-h-[120px] flex flex-col justify-center hover:-translate-y-0.5 transition-all duration-300 cursor-pointer focus:outline-none' onClick={() => openModal('projects')}>
-            
+          <button className='bg-red-300 rounded-2xl p-4  min-h-[120px] flex flex-col justify-center hover:-translate-y-0.5 transition-all duration-300 cursor-pointer focus:outline-none'
+            onClick={() => openModal('projects')}
+            style={{ backgroundImage: 'url(/images/bg.jpg)', backgroundSize: 'cover', backgroundPosition: 'center' }}>
           </button>
 
-          <div className='bg-teal-500/90 rounded-2xl p-4 min-h-[120px] flex flex-col justify-between hover:-translate-y-0.5 transition-all duration-300'>
-            
-          </div>
+          <div className='bg-teal-500/90 rounded-2xl p-4 min-h-[120px] flex flex-col justify-between hover:-translate-y-0.5 transition-all duration-300'></div>
 
           <div className='bg-amber-200 rounded-2xl p-4 min-h-[120px] flex flex-col items-center justify-center text-center hover:-translate-y-0.5 transition-all duration-300'>
             <Player/>
           </div>
 
-          <div className='bg-red-200 rounded-2xl p-4 min-h-[120px] flex flex-col items-center justify-center text-center'>
-            
-          </div>
-
+          <div className='bg-purple-200 rounded-2xl p-4 min-h-[120px] flex flex-col items-center justify-center text-center'></div>
         </div>
       </div>
 
       <div className='hidden md:flex items-center justify-center min-h-screen'>
         <div className='grid grid-cols-4 grid-rows-3 gap-4 max-w-6xl mx-auto w-full h-[90vh] max-h-[800px]'>
-          <button className='col-span-1 row-span-2 items-center bg-amber-200 rounded-2xl lg:rounded-3xl hover:-translate-y-1 hover:shadow-2xl transition-all duration-300 cursor-pointer p-4 lg:p-6 flex flex-col justify-center group' onClick={() => openModal('about')} style={{ backgroundImage: 'url(/images/INAH.jpg)', backgroundSize: 'cover', backgroundPosition: 'center' }}></button>
+          <button className='col-span-1 row-span-2 items-center bg-amber-200 rounded-2xl lg:rounded-3xl hover:-translate-y-1 hover:shadow-2xl transition-all duration-300 cursor-pointer p-4 lg:p-6 flex flex-col justify-center group'
+            onClick={() => openModal('about')}
+            style={{ backgroundImage: 'url(/images/INAH2.jpg)', backgroundSize: 'cover', backgroundPosition: 'center' }}>
+          </button>
 
-          <div className='col-span-1 row-span-1 bg-sky-950 rounded-2xl lg:rounded-3xl p-4 lg:p-6 flex items-center justify-center group'>
-            
-          </div>
+          <div className='col-span-1 row-span-1 bg-sky-950 rounded-2xl lg:rounded-3xl p-4 lg:p-6 flex items-center justify-center group'></div>
 
-          <button 
-            className='col-span-2 row-span-1 rounded-2xl lg:rounded-3xl hover:-translate-y-1 hover:shadow-2xl transition-all duration-300 cursor-pointer p-4 lg:p-6 flex items-center justify-center group relative overflow-hidden' 
+          <button
+            className='col-span-2 row-span-1 rounded-2xl lg:rounded-3xl hover:-translate-y-1 hover:shadow-2xl transition-all duration-300 cursor-pointer p-4 lg:p-6 flex items-center justify-center group relative overflow-hidden'
             onClick={() => openModal('contact')}
           >
-            <video 
+            <video
               className="absolute inset-0 w-full h-full object-cover rounded-2xl lg:rounded-3xl"
-              autoPlay 
-              loop 
-              muted 
+              autoPlay
+              loop
+              muted
               playsInline
             >
-              <source src="/images/0000-0120.mp4" type="video/mp4" />
+              <source src="/images/Sequence 01.mp4" type="video/mp4" />
               Your browser does not support the video tag.
             </video>
           </button>
 
-          <div className='col-span-1 row-span-1 bg-red-400 rounded-2xl lg:rounded-3xl p-4 lg:p-6 flex items-center justify-center group'>
-            
-          </div>
+          <div className='col-span-1 row-span-1 bg-red-400 rounded-2xl lg:rounded-3xl p-4 lg:p-6 flex items-center justify-center group'></div>
 
-          <button className='col-span-1 row-span-2 bg-red-300 rounded-2xl items-center lg:rounded-3xl hover:-translate-y-1 hover:shadow-2xl transition-all duration-300 cursor-pointer p-4 lg:p-6 flex flex-col justify-center group' onClick={() => openModal('projects')}
+          <button className='col-span-1 row-span-2 bg-red-300 rounded-2xl items-center lg:rounded-3xl hover:-translate-y-1 hover:shadow-2xl transition-all duration-300 cursor-pointer p-4 lg:p-6 flex flex-col justify-center group'
+            onClick={() => openModal('projects')}
             style={{ backgroundImage: 'url(/images/bg.jpg)', backgroundSize: 'cover', backgroundPosition: 'center' }}>
-            
           </button>
 
-          <div className='col-span-1 row-span-1 bg-teal-500/90 rounded-2xl lg:rounded-3xl p-4 lg:p-6 flex items-center justify-center group'>
-            
-          </div>
+          <div className='col-span-1 row-span-1 bg-teal-500/90 rounded-2xl lg:rounded-3xl p-4 lg:p-6 flex items-center justify-center group'></div>
 
           <div className='col-span-2 row-span-1 bg-amber-200 rounded-2xl lg:rounded-3xl hover:-translate-y-1 hover:shadow-2xl transition-all duration-300 cursor-pointer p-4 lg:p-6 flex items-center justify-between  group'>
             <Player/>
           </div>
 
-          <div className='col-span-1 row-span-1 bg-red-200 rounded-2xl lg:rounded-3xl p-4 lg:p-6 flex items-center justify-center group'>
-            
-          </div>
-
+          <div className='col-span-1 row-span-1 bg-purple-200 rounded-2xl lg:rounded-3xl p-4 lg:p-6 flex items-center justify-center group'></div>
         </div>
       </div>
+
       {selectedCard && (
         <div className="fixed inset-0 bg-black/50 backdrop-blur-sm flex items-center justify-center p-1 sm:p-4 z-50">
           <div className="bg-white/95 dark:bg-black/90 rounded-2xl max-w-3xl w-full max-h-[90vh] overflow-y-auto">
