@@ -260,7 +260,7 @@ function App() {
               </div>
             </div>
 
-            <div className="border-b md:border-b-0 pb-4 lg:pb-0 pr-0 lg:pr-4">
+            <div className="pb-4 lg:pb-0 pr-0 lg:pr-4">
               <h2 className="text-xs font-semibold mb-3 underline dark:text-white">
                 Skills
               </h2>
