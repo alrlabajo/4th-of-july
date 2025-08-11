@@ -63,7 +63,7 @@ function App() {
             <img src="/images/fan14.png" alt="Fan Event 14" className="w-full max-w-[12rem] h-auto" />
             <img src="/images/fan15.png" alt="Fan Event 15" className="w-full max-w-[12rem] h-auto" />
             <div className="flex flex-col sm:flex-row items-center gap-2">
-              <img src="/images/fan12.png" alt="Fan Event 12" className="w-full sm:w-1/2 max-w-[9rem] h-auto" />
+              <img src="/images/fan10.png" alt="Fan Event 12" className="w-full sm:w-1/2 max-w-[9rem] h-auto" />
               <img src="/images/fan17.png" alt="Fan Event 17" className="w-full sm:w-1/2 max-w-[9rem] h-auto" />
             </div>
           </div>
