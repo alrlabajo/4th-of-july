@@ -6,8 +6,11 @@ import TextType from './TextAnimations/TextType';
 function App() {
   const [selectedCard, setSelectedCard] = useState(null);
   const [activeTab, setActiveTab] = useState('photomanip');
+  const [selectedImage, setSelectedImage] = useState(null);
   const openModal = (card) => setSelectedCard(card);
   const closeModal = () => setSelectedCard(null);
+  const openImageModal = (imageSrc, imageAlt) => setSelectedImage({ src: imageSrc, alt: imageAlt });
+  const closeImageModal = () => setSelectedImage(null);
 
   const cards = [
         { id: 'about', label: 'About me' },
@@ -26,14 +29,54 @@ function App() {
     photomanip: (
       <div className="space-y-2">
         <div className='grid grid-cols-4 gap-4 w-full h-full'>
-          <img src="/images/mx1.jpg" alt="Photo Manipulation 1" className="w-36 h-full sm:w-36 md:w-56 rounded-sm object-cover" />
-          <img src="/images/mx2.jpg" alt="Photo Manipulation 2" className="w-36 h-full sm:w-36 md:w-56 rounded-sm object-cover" />
-          <img src="/images/plave3.png" alt="Photo Manipulation 3" className="w-36 h-full sm:w-36 md:w-56 rounded-sm object-cover" />
-          <img src="/images/mx4.jpg" alt="Photo Manipulation 4" className="w-36 h-full sm:w-36 md:w-56 rounded-sm object-cover" />
-          <img src="/images/mx5.jpg" alt="Photo Manipulation 5" className="w-36 h-full sm:w-36 md:w-56 rounded-sm object-cover" />
-          <img src="/images/mx6.jpg" alt="Photo Manipulation 6" className="w-36 h-full sm:w-36 md:w-56 rounded-sm object-cover" />
-          <img src="/images/plave1.png" alt="Photo Manipulation 7" className="w-36 h-full sm:w-36 md:w-56 rounded-sm object-cover" />
-          <img src="/images/plave2.png" alt="Photo Manipulation 8" className="w-36 h-full sm:w-36 md:w-56 rounded-sm object-cover" />
+          <img
+            src="/images/mx1.jpg"
+            alt="Photo Manipulation 1"
+            className="w-36 h-full sm:w-36 md:w-56 rounded-sm object-cover cursor-pointer hover:opacity-80 transition-opacity"
+            onClick={() => openImageModal("/images/mx1.jpg", "Photo Manipulation 1")}
+          />
+          <img
+            src="/images/mx2.jpg"
+            alt="Photo Manipulation 2"
+            className="w-36 h-full sm:w-36 md:w-56 rounded-sm object-cover cursor-pointer hover:opacity-80 transition-opacity"
+            onClick={() => openImageModal("/images/mx2.jpg", "Photo Manipulation 2")}
+          />
+          <img
+            src="/images/plave3.png"
+            alt="Photo Manipulation 3"
+            className="w-36 h-full sm:w-36 md:w-56 rounded-sm object-cover cursor-pointer hover:opacity-80 transition-opacity"
+            onClick={() => openImageModal("/images/plave3.png", "Photo Manipulation 3")}
+          />
+          <img
+            src="/images/mx4.jpg"
+            alt="Photo Manipulation 4"
+            className="w-36 h-full sm:w-36 md:w-56 rounded-sm object-cover cursor-pointer hover:opacity-80 transition-opacity"
+            onClick={() => openImageModal("/images/mx4.jpg", "Photo Manipulation 4")}
+          />
+          <img
+            src="/images/mx5.jpg"
+            alt="Photo Manipulation 5"
+            className="w-36 h-full sm:w-36 md:w-56 rounded-sm object-cover cursor-pointer hover:opacity-80 transition-opacity"
+            onClick={() => openImageModal("/images/mx5.jpg", "Photo Manipulation 5")}
+          />
+          <img
+            src="/images/mx6.jpg"
+            alt="Photo Manipulation 6"
+            className="w-36 h-full sm:w-36 md:w-56 rounded-sm object-cover cursor-pointer hover:opacity-80 transition-opacity"
+            onClick={() => openImageModal("/images/mx6.jpg", "Photo Manipulation 6")}
+          />
+          <img
+            src="/images/plave1.png"
+            alt="Photo Manipulation 7"
+            className="w-36 h-full sm:w-36 md:w-56 rounded-sm object-cover cursor-pointer hover:opacity-80 transition-opacity"
+            onClick={() => openImageModal("/images/plave1.png", "Photo Manipulation 7")}
+          />
+          <img
+            src="/images/plave2.png"
+            alt="Photo Manipulation 8"
+            className="w-36 h-full sm:w-36 md:w-56 rounded-sm object-cover cursor-pointer hover:opacity-80 transition-opacity"
+            onClick={() => openImageModal("/images/plave2.png", "Photo Manipulation 8")}
+          />
         </div>
       </div>
     ),
@@ -43,28 +86,42 @@ function App() {
 
         <div className="flex flex-col gap-2 items-center">
           <div className="flex gap-2">
-            <img src="/images/fan1.png" alt="Fan Event 1" className="w-full max-w-[5rem] h-auto" />
-            <img src="/images/fan2.png" alt="Fan Event 2" className="w-full max-w-[5rem] h-auto" />
+            <img src="/images/fan1.png" alt="Fan Event 1" className="w-full max-w-[5rem] h-auto"
+            onClick={() => openImageModal("/images/fan1.png", "Fan Event 1")} />
+            <img src="/images/fan2.png" alt="Fan Event 2" className="w-full max-w-[5rem] h-auto"
+            onClick={() => openImageModal("/images/fan2.png", "Fan Event 2")} />
           </div>
-          <img src="/images/fan11.png" alt="Fan Event 11" className="w-full max-w-[9rem] h-auto" />
+          <img src="/images/fan11.png" alt="Fan Event 11" className="w-full max-w-[9rem] h-auto"
+          onClick={() => openImageModal("/images/fan11.png", "Fan Event 11")} />
           <div className="flex gap-2">
-            <img src="/images/fan5.png" alt="Fan Event 5" className="w-full max-w-[7rem] h-auto" />
-            <img src="/images/fan6.png" alt="Fan Event 6" className="w-full max-w-[7rem] h-auto" />
+            <img src="/images/fan5.png" alt="Fan Event 5" className="w-full max-w-[7rem] h-auto"
+            onClick={() => openImageModal("/images/fan5.png", "Fan Event 5")} />
+            <img src="/images/fan6.png" alt="Fan Event 6" className="w-full max-w-[7rem] h-auto"
+            onClick={() => openImageModal("/images/fan6.png", "Fan Event 6")} />
           </div>
-          <img src="/images/fan16.png" alt="Fan Event 16" className="w-full max-w-[11rem] h-auto" />
-          <img src="/images/fan8.gif" alt="Fan Event 16" className="w-full h-full" />
+          <img src="/images/fan16.png" alt="Fan Event 16" className="w-full max-w-[11rem] h-auto"
+          onClick={() => openImageModal("/images/fan16.png", "Fan Event 16")} />
+          <img src="/images/fan8.gif" alt="Fan Event 16" className="w-full h-full"
+          onClick={() => openImageModal("/images/fan8.gif", "Fan Event 16")} />
         </div>
 
         <div className="flex flex-col gap-2 items-center">
-          <img src="/images/fan3.png" alt="Fan Event 3" className="w-full max-w-[14rem] h-auto" />
-          <img src="/images/fan4.png" alt="Fan Event 4" className="w-full max-w-[14rem] h-auto" />
+          <img src="/images/fan3.png" alt="Fan Event 3" className="w-full max-w-[14rem] h-auto"
+            onClick={() => openImageModal("/images/fan3.png", "Fan Event 3")} />
+          <img src="/images/fan4.png" alt="Fan Event 4" className="w-full max-w-[14rem] h-auto"
+            onClick={() => openImageModal("/images/fan4.png", "Fan Event 4")} />
           <div className="space-y-2 flex flex-col items-center">
-            <img src="/images/fan13.png" alt="Fan Event 13" className="w-full max-w-[12rem] h-auto" />
-            <img src="/images/fan14.png" alt="Fan Event 14" className="w-full max-w-[12rem] h-auto" />
-            <img src="/images/fan15.png" alt="Fan Event 15" className="w-full max-w-[12rem] h-auto" />
+            <img src="/images/fan13.png" alt="Fan Event 13" className="w-full max-w-[12rem] h-auto"
+            onClick={() => openImageModal("/images/fan13.png", "Fan Event 13")} />
+            <img src="/images/fan14.png" alt="Fan Event 14" className="w-full max-w-[12rem] h-auto"
+            onClick={() => openImageModal("/images/fan14.png", "Fan Event 14")} />
+            <img src="/images/fan15.png" alt="Fan Event 15" className="w-full max-w-[12rem] h-auto"
+            onClick={() => openImageModal("/images/fan15.png", "Fan Event 15")} />
             <div className="flex flex-col sm:flex-row items-center gap-2">
-              <img src="/images/fan10.png" alt="Fan Event 12" className="w-full sm:w-1/2 max-w-[9rem] h-auto" />
-              <img src="/images/fan17.png" alt="Fan Event 17" className="w-full sm:w-1/2 max-w-[9rem] h-auto" />
+              <img src="/images/fan10.png" alt="Fan Event 12" className="w-full sm:w-1/2 max-w-[9rem] h-auto"
+              onClick={() => openImageModal("/images/fan10.png", "Fan Event 12")} />
+              <img src="/images/fan17.png" alt="Fan Event 17" className="w-full sm:w-1/2 max-w-[9rem] h-auto"
+              onClick={() => openImageModal("/images/fan17.png", "Fan Event 17")} />
             </div>
           </div>
         </div>
@@ -74,22 +131,72 @@ function App() {
     layout: (
       <div className="space-y-2">
         <div className='grid grid-cols-2 gap-4 w-full h-full'>
-          <img src="/images/Mockup.png" alt="Layout 1" className="w-full h-full " />
-          <img src="/images/Mockup22.png" alt="Layout 2" className="w-full h-full" />
-          <img src="/images/mockup1.png" alt="Layout 3" className="w-full h-full" />
-          <img src="/images/mockup2.png" alt="Layout 4" className="w-full h-full" />
-          <img src="/images/mockup3.png" alt="Layout 3" className="w-full h-full" />
-          <img src="/images/mockup4.png" alt="Layout 3" className="w-full h-full" />
+          <img
+            src="/images/Mockup.png"
+            alt="Layout 1"
+            className="w-full h-full cursor-pointer hover:opacity-80 transition-opacity"
+            onClick={() => openImageModal("/images/Mockup.png", "Layout 1")}
+          />
+          <img
+            src="/images/Mockup22.png"
+            alt="Layout 2"
+            className="w-full h-full cursor-pointer hover:opacity-80 transition-opacity"
+            onClick={() => openImageModal("/images/Mockup22.png", "Layout 2")}
+          />
+          <img
+            src="/images/mockup1.png"
+            alt="Layout 3"
+            className="w-full h-full cursor-pointer hover:opacity-80 transition-opacity"
+            onClick={() => openImageModal("/images/mockup1.png", "Layout 3")}
+          />
+          <img
+            src="/images/mockup2.png"
+            alt="Layout 4"
+            className="w-full h-full cursor-pointer hover:opacity-80 transition-opacity"
+            onClick={() => openImageModal("/images/mockup2.png", "Layout 4")}
+          />
+          <img
+            src="/images/mockup3.png"
+            alt="Layout 5"
+            className="w-full h-full cursor-pointer hover:opacity-80 transition-opacity"
+            onClick={() => openImageModal("/images/mockup3.png", "Layout 5")}
+          />
+          <img
+            src="/images/mockup4.png"
+            alt="Layout 6"
+            className="w-full h-full cursor-pointer hover:opacity-80 transition-opacity"
+            onClick={() => openImageModal("/images/mockup4.png", "Layout 6")}
+          />
         </div>
       </div>
     ),
     photog: (
       <div className="space-y-5 items-center">
         <div className='grid grid-cols-4 gap-4 w-full h-full'>
-          <img src="/images/photog (1).jpg" alt="Photo Manipulation 1" className="w-36 h-full sm:w-36 md:w-56 rounded-sm object-cover" />
-          <img src="/images/photog (1).png" alt="Photo Manipulation 2" className="w-36 h-full sm:w-36 md:w-56 rounded-sm object-cover" />
-          <img src="/images/photog (2).jpg" alt="Photo Manipulation 3" className="w-36 h-full sm:w-36 md:w-56 rounded-sm object-cover" />
-          <img src="/images/photog (4).jpg" alt="Photo Manipulation 4" className="w-36 h-full sm:w-36 md:w-56 rounded-sm object-cover" />
+          <img
+            src="/images/photog (1).jpg"
+            alt="Photography 1"
+            className="w-36 h-full sm:w-36 md:w-56 rounded-sm object-cover cursor-pointer hover:opacity-80 transition-opacity"
+            onClick={() => openImageModal("/images/photog (1).jpg", "Photography 1")}
+          />
+          <img
+            src="/images/photog (1).png"
+            alt="Photography 2"
+            className="w-36 h-full sm:w-36 md:w-56 rounded-sm object-cover cursor-pointer hover:opacity-80 transition-opacity"
+            onClick={() => openImageModal("/images/photog (1).png", "Photography 2")}
+          />
+          <img
+            src="/images/photog (2).jpg"
+            alt="Photography 3"
+            className="w-36 h-full sm:w-36 md:w-56 rounded-sm object-cover cursor-pointer hover:opacity-80 transition-opacity"
+            onClick={() => openImageModal("/images/photog (2).jpg", "Photography 3")}
+          />
+          <img
+            src="/images/photog (4).jpg"
+            alt="Photography 4"
+            className="w-36 h-full sm:w-36 md:w-56 rounded-sm object-cover cursor-pointer hover:opacity-80 transition-opacity"
+            onClick={() => openImageModal("/images/photog (4).jpg", "Photography 4")}
+          />
         </div>
         <a  href='https://labajoangelinal.wixsite.com/photography' className='flex items-center justify-center dark:text-white underline text-xs '>Visit my photography site</a>
       </div>
@@ -412,6 +519,28 @@ function App() {
                 {cardsContent[selectedCard]}
               </div>
             </div>
+          </div>
+        </div>
+      )}
+
+      {selectedImage && (
+        <div
+          className="fixed inset-0 bg-black/80 backdrop-blur-sm flex items-center justify-center p-4 z-50"
+          onClick={closeImageModal}
+        >
+          <div className="relative max-w-4xl max-h-[90vh] w-full h-full flex items-center justify-center">
+            <button
+              onClick={closeImageModal}
+              className="absolute top-4 right-1 text-white hover:text-gray-300 text-3xl z-10 w-10 h-10 flex items-end justify-center"
+            >
+              ×
+            </button>
+            <img
+              src={selectedImage.src}
+              alt={selectedImage.alt}
+              className="w-96 h-96 object-contain rounded-lg"
+              onClick={(e) => e.stopPropagation()}
+            />
           </div>
         </div>
       )}
